@@ -21,7 +21,7 @@ Para probar nuestro código en tu propia computadora, sigue estos pasos:
 2. **Clonar el repositorio:** Descarga o clona este repositorio en tu computador. Asegúrate de mantener la estructura original, incluyendo la carpeta `controllers` que contiene los códigos.
 3. **Abrir el Mundo:**
    * Abre Webots.
-   * Ve a `File` > `Open World...` y selecciona el archivo del mundo `.wbt` incluido en este repositorio.
+   * Ve a `File` > `Open World...` y selecciona el archivo del mundo `epluck.wbt` incluido en este repositorio.
 4. **Cargar el Controlador (Elegir Experimento):**
    * En el panel izquierdo (Árbol de Nodos), despliega las opciones del robot `e-puck`.
    * Busca el campo `controller` y haz clic en `Select...`.
