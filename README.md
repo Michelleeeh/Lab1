@@ -18,16 +18,18 @@ A través de la variación de las velocidades de cada rueda ($v_r$ y $v_l$), log
 Para probar nuestro código en tu propia computadora, sigue estos pasos:
 
 1. **Requisitos previos:** Se debe tener instalado [Webots](https://cyberbotics.com/) y [Python 3.x](https://www.python.org/) en el sistema.
-2. **Clonar el repositorio:** Descarga o clona este repositorio en tu computador.
+2. **Clonar el repositorio:** Descarga o clona este repositorio en tu computador. Asegúrate de mantener la estructura original, incluyendo la carpeta `controllers` que contiene los códigos.
 3. **Abrir el Mundo:**
    * Abre Webots.
-   * Ve a `File` > `Open World...` y selecciona el archivo del mundo `.wbt` incluido en este repositorio (o crea un nuevo mundo y añade un robot `e-puck`).
-4. **Cargar el Controlador:**
+   * Ve a `File` > `Open World...` y selecciona el archivo del mundo `.wbt` incluido en este repositorio.
+4. **Cargar el Controlador (Elegir Experimento):**
    * En el panel izquierdo (Árbol de Nodos), despliega las opciones del robot `e-puck`.
-   * Busca el campo `controller`, haz clic en `Select...` y elige nuestro archivo de Python (`[Nombre de tu archivo de controlador].py`).
-5. **Ejecutar:** * Guarda los cambios presionando el ícono del disquete.
+   * Busca el campo `controller` y haz clic en `Select...`.
+   * En la lista se verán los distintos controladores diseñados para cada prueba (ej. `l_linea_recta`, `2_linea_curva`, `3_rotacion`, etc). Selecciona el experimento deseado.
+5. **Ejecutar:** * Guarda los cambios en el mundo presionando el ícono del disquete.
    * Presiona el botón de **Reset** (flecha circular) y luego **Play** (triángulo) en la barra superior de Webots para iniciar la simulación.
 
+* *Nota: Para probar otro experimento, simplemente pausa la simulación y repite el paso 4 eligiendo un controlador diferente.*
 ---
 
 ## Resultados obtenidos
