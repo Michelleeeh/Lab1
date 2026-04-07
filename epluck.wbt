@@ -1,0 +1,48 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+
+WorldInfo {
+  info [
+    "In this example, the robot moves down a slope."
+    "The altimeter is used to record the robots height."
+  ]
+  title "Altimeter"
+  basicTimeStep 8
+  contactProperties [
+    ContactProperties {
+      material2 "body"
+      coulombFriction [
+        0
+      ]
+      softCFM 0.1
+    }
+  ]
+}
+Viewpoint {
+  orientation -0.4501726065349952 -0.40102432738238475 0.7978246130403565 4.5315312271834784
+  position -0.23886026823048662 1.3373373712504497 2.1271983901476204
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+}
+PointLight {
+  attenuation 0 0 1
+  intensity 0.6
+  location 0.6 0 0
+}
+E-puck {
+  hidden position_0_0 121.26527075059408
+  hidden position_0_1 171.59555850599045
+  hidden rotation_1 0 -1 0 4.398435392997646
+  hidden rotation_2 0 -1 0 4.333630095037968
+  translation 0.00283808 -0.00063281 -4.22228e-05
+  rotation -7.534459932012267e-05 -0.0001112219989963804 -0.9999999909764291 1.5835203061004253
+  controller "e-puck_line"
+}
