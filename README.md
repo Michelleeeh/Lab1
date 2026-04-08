@@ -61,4 +61,4 @@ Para probar nuestro código en tu propia computadora, sigue estos pasos:
 
 * Este proceso (avanzar y girar) debe programarse en un bucle que se repita exactamente cuatro veces para cerrar la figura geométrica.
 
-*(Nota: Se puede revisar la carpeta `/Multimedia` de este repositorio para ver videos del robot completando estos desafíos).*
+*(Nota: Se puede revisar la carpeta `/multimedia` de este repositorio para ver videos del robot completando estos desafíos).*
