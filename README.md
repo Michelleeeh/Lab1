@@ -1,5 +1,7 @@
 # Laboratorio 1: Simulación de un Robot Móvil Diferencial en Webots
 
+---
+
 ## Descripción del laboratorio
 El objetivo de este laboratorio es comprender el comportamiento cinemático de un robot móvil diferencial mediante una simulación interactiva. Utilizando el simulador Webots y un robot e-puck, implementamos un controlador en Python para manipular los actuadores (motores de las ruedas izquierda y derecha.
 
@@ -32,12 +34,31 @@ Para probar nuestro código en tu propia computadora, sigue estos pasos:
 * *Nota: Para probar otro experimento, simplemente pausa la simulación y repite el paso 4 eligiendo un controlador diferente.*
 ---
 
-## Resultados obtenidos
-Durante la experimentación, modificamos las velocidades de las ruedas y observamos los siguientes comportamientos cinemáticos:
+## Análisis de resultados obtenidos
 
-* **Movimiento Recto ($v_r = v_l$):** Al asignar la misma velocidad a ambos motores (Ej. $v_r = 2.0$, $v_l = 2.0$), el robot avanzó en una línea recta perfecta, ya que el desplazamiento en ambos lados es idéntico.
-* **Trayectoria Curva ($v_r \neq v_l$):** Al asignar [explica brevemente los valores que usaron, ej: una velocidad mayor a la rueda derecha], el robot describió un arco, girando siempre en dirección hacia la rueda más lenta.
-* **Rotación en el lugar ($v_r = -v_l$):** Al establecer velocidades de igual magnitud pero con signos opuestos (Ej. $v_r = 2.0$, $v_l = -2.0$), el robot giró sobre su propio eje sin desplazarse, logrando un radio de giro igual a cero.
-* **Desafío Cuadrado:** Implementamos un bucle basado en el tiempo interno del simulador. Logramos que el robot dibujara un cuadrado alternando un movimiento recto de [X] segundos con una rotación de 90 grados que duró exactamente [X] segundos.
+*¿Qué ocurre cuando ambas ruedas tienen la misma velocidad?*
 
-*(Nota: Se puede revisar la carpeta `/multimedia` de este repositorio para ver capturas de pantalla y videos del robot completando estos desafíos).*
+* El robot se desplaza en una línea recta. Esto sucede porque ambas ruedas recorren exactamente la misma distancia en el mismo tiempo. Físicamente, la velocidad lineal del robot será igual a la velocidad de las ruedas, y su velocidad angular (de giro) será cero. Si la velocidad es positiva, avanza; si es negativa, retrocede en línea recta.
+
+
+*¿Cómo cambia la trayectoria cuando las velocidades son diferentes?*
+
+* La trayectoria deja de ser recta y se convierte en una curva. Al ir a distintas velocidades, una rueda recorre más distancia que la otra en el mismo tiempo. Esto obliga al chasis del robot a pivotar. La regla general es que el robot siempre va a "doblar" hacia el lado de la rueda que va más lento.
+
+*¿Qué ocurre cuando una rueda gira en sentido opuesto a la otra?*
+
+* El robot experimenta una rotación en su propio eje (o rotación en el lugar). Si las velocidades tienen la misma magnitud pero signos contrarios (por ejemplo, $v_r = 2.0$ y $v_l = -2.0$), el avance lineal se anula por completo (velocidad lineal = 0). Toda la energía se convierte en velocidad angular, haciendo que el robot gire como un trompo sin moverse de su posición inicial en el tablero.
+  
+*¿Qué tipo de movimiento permite dibujar un círculo?*
+
+* Para dibujar un círculo se necesita un movimiento de trayectoria curva constante. Esto se logra configurando velocidades que sean diferentes entre sí, pero que se mantengan fijas durante todo el tiempo de ejecución. Al mantener constante la diferencia de velocidad, el radio de giro no cambia, lo que provoca que la curva eventualmente se cierre sobre sí misma formando un círculo. (Mientras mayor sea la diferencia entre las velocidades, más pequeño y cerrado será el círculo).
+
+***Extra**: ¿Qué tipo de control se requiere para dibujar un cuadrado?*
+
+* A diferencia de la línea recta o el círculo, que utilizan velocidades constantes desde el inicio hasta el fin, dibujar un cuadrado requiere un control dinámico basado en secuencias de tiempo. El robot no puede mantener la misma velocidad siempre, sino que debe alternar entre dos estados distintos:
+  1. Desplazamiento: Avanzar en línea recta ($v_r = v_l$) durante un tiempo específico para trazar uno de los lados.
+  2. Giro: Detener el avance y rotar sobre su propio eje ($v_r = -v_l$) durante una fracción de segundo exacta para lograr un ángulo de 90 grados.
+
+* Este proceso (avanzar y girar) debe programarse en un bucle que se repita exactamente cuatro veces para cerrar la figura geométrica.
+
+*(Nota: Se puede revisar la carpeta `/Multimedia` de este repositorio para ver videos del robot completando estos desafíos).*
