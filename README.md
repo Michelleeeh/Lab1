@@ -20,7 +20,7 @@ A través de la variación de las velocidades de cada rueda ($v_r$ y $v_l$), log
 Para probar nuestro código en tu propia computadora, sigue estos pasos:
 
 1. **Requisitos previos:** Se debe tener instalado [Webots](https://cyberbotics.com/) y [Python 3.x](https://www.python.org/) en el sistema.
-2. **Clonar el repositorio:** Descarga o clona este repositorio en tu computador. Asegúrate de mantener la estructura original, incluyendo la carpeta `controllers` que contiene los códigos.
+2. **Clonar el repositorio:** Descarga o clona este repositorio en tu computador. Se debe mantener la estructura original, incluyendo la carpeta `controllers` que contiene los códigos.
 3. **Abrir el Mundo:**
    * Abre Webots.
    * Ve a `File` > `Open World...` y selecciona el archivo del mundo `epluck.wbt` incluido en este repositorio.
@@ -34,7 +34,21 @@ Para probar nuestro código en tu propia computadora, sigue estos pasos:
 * *Nota: Para probar otro experimento, simplemente pausa la simulación y repite el paso 4 eligiendo un controlador diferente.*
 ---
 
-## Análisis de resultados obtenidos
+## Resultados obtenidos
+
+Durante la experimentación, modificamos las velocidades de las ruedas y observamos los siguientes comportamientos cinemáticos:
+
+* **Movimiento Recto ($v_r = v_l$):** Al asignar la misma velocidad a ambos motores ($v_r = 2.0$, $v_l = 2.0$), el robot avanzó en una línea recta perfecta, ya que el desplazamiento en ambos lados es idéntico.
+* **Trayectoria Curva ($v_r \neq v_l$):** Al asignar distintos valores a cada motor ($v_r = 2.0$, $v_l = 1.0$) el robot describió un arco, girando siempre en dirección hacia la rueda más lenta.
+* **Rotación en el lugar ($v_r = -v_l$):** Al establecer velocidades de igual magnitud pero con signos opuestos ($v_r = 2.0$, $v_l = -2.0$), el robot giró sobre su propio eje sin desplazarse, logrando un radio de giro igual a cero.
+* **Círculo ($v_r \neq v_l$):** Similar a la trayectoria curva, para dibujar un círculo se necesita que ambos motores tengan distintos valores ($v_r = 4.0$, $v_l = 3.0$). Sin embargo, esta diferencia no debe ser al azar, ya que todo dependerá del tamaño del círculo que queramos hacer.
+  
+    * Círculo pequeño (Giro cerrado): Las velocidades de las ruedas deben ser muy diferentes. Por ejemplo, si una va rápido y la otra casi frenada ($v_r = 2.0$ y $v_l = 0.5$), el robot gira bruscamente y dibuja un círculo pequeño.
+    * Círculo grande (Giro abierto): Las velocidades deben ser muy parecidas (pero no idénticas, ya que si son iguales irá en línea recta). Por ejemplo, si $v_r = 2.0$ y $v_l = 1.8$, el robot hará una curva muy suave y prolongada que tardará bastante espacio en cerrarse para formar un círculo gigante.
+      
+* **Desafío Cuadrado:** Implementamos un bucle basado en el tiempo interno del simulador. Logramos que el robot dibujara un cuadrado alternando un movimiento recto de 3.0 segundos con una rotación de 90 grados que duró exactamente 1.5 segundos.
+
+### Preguntas de análisis
 
 *¿Qué ocurre cuando ambas ruedas tienen la misma velocidad?*
 
