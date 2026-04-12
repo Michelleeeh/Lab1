@@ -8,11 +8,11 @@ El objetivo de este laboratorio es comprender el comportamiento cinemático de u
 A través de la variación de las velocidades de cada rueda ($v_r$ y $v_l$), logramos controlar el movimiento del robot para que ejecute trayectorias específicas como línea recta, curvas, rotación sobre su propio eje, e incluso figuras geométricas más complejas como un cuadrado.
 
 **Equipo de Trabajo:**
-* **Programador:** [Nombre]
-* **Experimentador:** [Nombre]
-* **Analista:** [Nombre]
-* **Documentador:** [Nombre]
-* **Integrador:** [Nombre]
+* **Programador:** Michelle Hernández
+* **Experimentador:** Michelle Hernández
+* **Analista:** Alfonso Escobar
+* **Documentador:** Branco González
+* **Integrador:** Branco González
 
 ---
 
