@@ -10,7 +10,7 @@ A través de la variación de las velocidades de cada rueda ($v_r$ y $v_l$), log
 **Equipo de Trabajo:**
 * **Programador:** Michelle Hernández
 * **Experimentador:** Michelle Hernández
-* **Analista:** Alfonso Escobar
+* **Analista:** Alfredo Escobar
 * **Documentador:** Branco González
 * **Integrador:** Branco González
 
